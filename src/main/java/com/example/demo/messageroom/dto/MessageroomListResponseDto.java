@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -13,8 +14,17 @@ import java.util.List;
 public class MessageroomListResponseDto {
 
     // 쪽지방 리스트 자체의 필드
-    private List<MessageroomListResponseDto.SingleRoom> messageroomList;    // 쪽지방들
-    private Integer messagerommCount;   // 쪽지방의 수
+    private static List<MessageroomListResponseDto.SingleRoom> messageroomList;    // 쪽지방들
+    private static Integer messageroomCount;   // 쪽지방의 수
+
+    // 생성자
+    public MessageroomListResponseDto(List<Messageroom> roomList) {
+        messageroomList = new ArrayList<SingleRoom>();
+        for(Messageroom room : roomList) {
+            messageroomList.add(new SingleRoom(room));
+            messageroomCount++;
+        }
+    }
 
     // 쪽지방 하나에 대한 클래스
     /*

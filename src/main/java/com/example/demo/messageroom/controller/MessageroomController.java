@@ -32,7 +32,7 @@ public class MessageroomController {
     @ResponseStatus(HttpStatus.OK)
     public MessageroomListResponseDto findRoomList(@PathVariable Long memberId) {
         List<Messageroom> roomList = messageroomService.findAllBySenderOrReceiver(memberId);
-        return MessageroomListResponseDto.of(roomList);
+        return new MessageroomListResponseDto(roomList);
     }
 
 
