@@ -1,6 +1,5 @@
 package com.example.demo.board.domain;
 
-import com.example.demo.board.dto.BoardModifyRequestDto;
 import com.example.demo.global.entity.BaseTimeEntity;
 import com.example.demo.member.domain.Member;
 import lombok.AccessLevel;
