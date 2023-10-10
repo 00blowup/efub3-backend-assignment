@@ -6,6 +6,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.util.Assert;
 
 import javax.persistence.*;
 
@@ -39,6 +40,7 @@ public class Board extends BaseTimeEntity {
 
     @Builder
     public Board (String title, String description, String pinned, Member owner) {
+        Assert.hasLength(title, "Title must not be empty"); // 제목 값이 비어있을 경우 IllegalArgumentException을 발생시키도록 설정
         this.title = title;
         this.description = description;
         this.pinned = pinned;
