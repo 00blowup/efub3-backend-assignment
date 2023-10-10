@@ -54,7 +54,7 @@ public class MessageroomService {
 
     @Transactional(readOnly = true)
     public List<Messageroom> findBySenderOrReceiver (Member member) {
-        return messageroomRepository.findAllBySenderOrReceiver(member);
+        return messageroomRepository.findAllBySenderOrReceiver(member, member);
     }
 
 }

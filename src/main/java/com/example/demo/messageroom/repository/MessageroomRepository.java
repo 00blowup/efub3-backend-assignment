@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface MessageroomRepository extends JpaRepository<Messageroom, Long> {
-    List<Messageroom> findAllBySenderOrReceiver(Member member);
+    List<Messageroom> findAllBySenderOrReceiver(Member sender, Member receiver);
 }
